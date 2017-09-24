@@ -1,0 +1,15 @@
+Array
+(
+    [oauth_token] => fDvwau9SrMsCdwvCxeUXZrSOIM8v5oIcQj98tt4oZXc
+    [PHPSESSID] => edc187ce99b52a677a26088dd0674bec
+)
+Array
+(
+    [oauth_token] => IeucjOgK9wEccdrUVpjPf7z24C8Azs7e0VmI680iQo
+    [PHPSESSID] => edc187ce99b52a677a26088dd0674bec
+)
+Array
+(
+    [oauth_token] => fzGM98XdMhi4yJU9GhYn2fpddgiHdojxLVMTpVns
+    [PHPSESSID] => edc187ce99b52a677a26088dd0674bec
+)

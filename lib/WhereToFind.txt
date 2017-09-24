@@ -1,0 +1,36 @@
+Texy!
+=====
+Last Update:    ?
+Author:         David Grudl
+URL:            http://texy.info/de/
+Version:        2.0 (current 8da0750)
+Download:       http://download.texy.info/texy-2.0.zip
+Documenation:   http://texy.info/en/syntax
+
+Twitter
+=======
+Last Update:    ?
+Author			Tijs Verkoyen <php-twitter@verkoyen.eu>
+Version			1.0.1 (current 1.0.4)
+URL:            http://classes.verkoyen.eu/twitter/
+Documenation:   http://classes.verkoyen.eu/twitter/docs
+
+
+Gibberisch AES
+==============
+Last Update:    Fri Nov 13 18:04:05 2009  
+Author:         Mark Percival
+Version:        trunk
+URL:            http://markpercival.us/
+Clone:          git://github.com/markpercival/gibberish-aes.git
+
+
+Markdown
+========
+URL:            http://daringfireball.net/projects/markdown/
+Version:        (current 1.0.1)
+Download:       http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip
+
+
+PHP Markdown Extra
+==================
