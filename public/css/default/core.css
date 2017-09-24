@@ -1,0 +1,126 @@
+/************* CSS **************/
+
+html, body {
+  background-color:#FFFFFF;
+  color:#666666;
+  font-family:"new helvetica",arial,helvetica,sans-serif;
+  font-size:11px;
+  font-weight:normal;
+  margin:0;
+  padding:0;
+  text-align:left;
+}
+
+a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:link {
+  color:#000000;
+  text-decoration:none;
+}
+
+a:visited {
+  color:#000000;
+  text-decoration:none;
+}
+
+a:active {
+  color:#FF6600;
+  text-decoration:underline;
+}
+
+a:hover {
+  color:#FF6600;
+  text-decoration:underline;
+}
+
+.post-lead h4 a[href$=".pdf"]:after, .post-lead p a[href$=".pdf"]:after {
+  content: url(http://www.subtraction.com/assets/pdf_icon.gif);
+  padding: 0 4px;
+}
+
+img {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "new helvetica",arial,helvetica,sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #111111;
+  font-weight: bold;
+}
+
+/*
+h1, h2, h3, h4, h5, h6 {
+  font-family: "new helvetica",arial,helvetica,sans-serif;
+}
+
+h1 {
+  font-size:18px;
+  line-height:30px;
+  font-weight:bold;
+  margin:0;
+  padding:0;
+}
+
+h2 {
+  border: 0 none;
+  color:#000000;
+  font-size:12px;
+  font-weight:bold;
+  line-height:16px;
+  margin:0;
+  padding:0 0 10px;
+}
+
+h3 {
+  border: 0 none;
+  font-size:12px;
+  font-weight:bold;
+  line-height:16px;
+  margin:0;
+  padding:0 0 10px;
+}
+
+h4 {
+  border: 0 none;
+  font-size:11px;
+  font-weight:bold;
+  line-height:13px;
+  margin:0;
+  padding:0 0 3px;
+}
+*/
+
+p {
+  padding: 0 0 10px;
+}
+
+hr {
+  border: 1px solid transparent;
+  border-top-color: #777777;
+  height: 1px;
+  width: 80%;
+  padding: 5px 0;
+}
+
+hr.left  { background: url( "../images/separator1.png" ) no-repeat; float: none; }
+hr.right { background: url( "../images/separator2.png" ) no-repeat; float: none; }
+
+.clear {
+  clear: both;
+}
+
+.tab.inactive {
+	display: none;
+}
+
+.left { float: left; }
+.right { float: right; }

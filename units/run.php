@@ -1,7 +1,7 @@
 <?php
 /*
  * ==========================================================================
- * Titel                  : index.php
+ * Titel                  : run.php (TODO: hier via svn generate)
  * Licence                : GPL
  * URL                    : http://zenwiki.thomas-weustenfeld.de
  * Author                 : Thomas Weustenfeld
@@ -26,30 +26,31 @@
  * ==========================================================================
  */
 
-define( 'ZENWIKI_VERSION', '0.03' );
-
-ini_set('short_open_tag', 1);
-ini_set('display_errors', 'On');
-date_default_timezone_set('Europe/Berlin');
-
-#var_dump( $_ENV );
-
-// TODO requirements
-// install (wenn keine settings ini)
+# TODO: Warning: run from root
 
 include_once "autoloader.php";
 
-if( !Configuration::load( $_SERVER["SERVER_NAME"] . ".ini" ) ) {
+function print_usage()
+{
+    echo "Usage: ", $argv[0], " <test>\n";
+    echo "list, all\n";
+}
+
+if( $argc < 2 ) {
+    print_usage();
+    exit;
+}
+
+if( !Configuration::load( $_ENV["SERVER_NAME"] . ".ini" ) ) {
 	Configuration::load( "settings.ini" );
 }
 
 $basepath = Configuration::get( "wiki", "basepath", "wiki" );
 
-FileDB::setBasepath( $basepath );
-UserManager::setBasepath(  $basepath . "/users" );
-MarkupManager::setImagePath(  $basepath . "/images" );
+$test = $argv[1];
 
-PluginManager::loadModules();
+echo "* Running test <$test>\n";
+echo "* Basepath: $basepath\n";
 
-UserManager::init();
-Dispatcher::run();
+include( "test_" . $test . ".php" );
+

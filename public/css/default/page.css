@@ -1,0 +1,277 @@
+/**** LAYOUT ****/
+
+#site-container {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#left {
+  width: 170px;
+  float: left;
+}
+
+#right {
+  border-left: 1px solid black;
+  margin-left: 170px;
+  padding-left: 30px;
+}
+
+#top {
+
+}
+#top span {
+  margin-bottom: .5em;
+  background-color: #F0F094;
+  padding: .3em;
+  display: block;
+  text-align: center;
+  color: black;
+}
+
+/***** MENU *****/
+#menu ul {
+	list-style-image: url( "/public/images/listsymbol.png" );
+}
+
+/**** TOP MENU ****/
+
+#top-menu ul {
+  padding: 0;
+  margin: 0;
+  height: 60px;
+  background-color: #555;
+  list-style: none;
+}
+
+#top-menu li {
+  float: left;
+}
+
+#top-menu li a {
+  display: block;
+  width: 100px;
+  height: 60px;
+  line-height: 90px;
+  color: #EEE;
+  background-color: #777;
+  vertical-align: baseline;
+  padding-left: 10px;
+  font-size: 14px;
+  border-right: 2px solid white;
+}
+
+#top-menu li a:hover {
+  background-color: #999;
+  text-decoration: none;
+}
+
+#breadcrumb {
+	padding-top: .4em;
+}
+
+/**** VIEW ****/
+
+#view h1.pagenotfound,
+#view h1.pagename,
+#view #wikicontent {
+	margin: .6em 0;
+}
+
+#view h1.pagenotfound { color: #990000; }
+
+/**** EDIT ****/
+
+#edit input.pagename,
+#edit textarea {
+	background-color: #FFFFDD;
+	margin: .6em 0;
+	border: 1px solid #AAA;
+}
+#edit input.pagename:focus,
+#edit textarea:focus {
+	background-color: #FFFFD0;
+    border-color: black;	
+}
+#edit textarea {
+	padding-left: 3px;
+}
+#edit input.pagename {
+	font-size: 15px;
+	padding: .4em;
+	display: block
+}
+
+/**** HIST ****/
+#hist h1 {
+	padding: .6em 0;
+}
+#hist h2 {
+	padding: .4em 0;
+}
+#hist table {
+	border-collapse: collapse;
+}
+#hist table th {
+  background-color:#333333;
+  border:1px solid #333333;
+  color:white;
+	padding: 10px;
+}
+#hist table td {
+	padding: 10px;
+	border: 1px solid gray;
+}
+#hist a.link {
+	display: block;
+	padding: .3em;
+	margin: .6em 0;
+	background-color: #EEB;
+	font-size: 12px;
+	text-align: center;
+	width: 60px;
+}
+#hist a.link:hover {
+	color: black;
+	text-decoration: none;
+	background-color: #EE6;
+}
+#hist .diff {
+	background-color: #EEE;
+	min-height: 10px;
+	display: none;
+	padding: .5em;
+	margin: .6em 0;
+	font-family: "Courier";
+	color: black;
+	border-left:3px solid #444444;
+
+	white-space: pre-wrap;       /* css-3 should we be so lucky... */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	/*white-space: -pre-wrap;*/      /* Opera 4-6 ?? */
+	/*white-space: -o-pre-wrap;*/    /* Opera 7 ?? */
+	/*word-wrap: break-word;*/       /* Internet Explorer 5.5+ */
+	/*_white-space: pre;*/			 /* IE only hack to re-specify in addition to word-wrap  */
+}
+
+/*** HISTORY ****/
+#hist .diff div.head { color: gray; }
+#hist .diff div.sec { background-color: #57E; }
+#hist .diff div.add { background-color: #5E7; }
+#hist .diff div.sub { background-color: #E57; }
+
+/**** ETC ****/
+
+#logo {
+	text-align: center;
+} 
+
+span.lastedit {
+  background-color: #555;
+  color: #EEE;
+  padding: 2px 40px;
+}
+
+/*** SIDEBAR ***/
+#menu #search {
+  text-align: center;
+}
+#menu #searchfield {
+	padding: 1px;
+	margin: 1.6em auto .8em auto;
+	width: 115px;
+	color: gray;
+}
+
+#quickref {
+	display: block;
+	margin: 0 auto;
+}
+
+/**** FOOTER *****/
+#footer {
+	clear: both;
+	background: url( "../images/footer.png" ) no-repeat top right;
+	padding-top: 39px;
+	text-align: center;
+}
+
+#footer .edit-info {
+	font-size: .9em;
+}
+#footer .footer-links {
+	padding-top: 4px;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+}
+#footer .footer-links a:hover {
+	color: #555;
+	text-decoration: none;
+}
+#footer .copyright {
+	padding: 2px;
+ 	background-color: #444;
+}
+#footer .copyright a {
+	color: white;
+	font-weight: normal;
+}
+
+#view.preview div#wikicontent {
+	border: 2px solid #666;
+	background-color: #FAFACF;
+	padding: 4px;
+	margin-bottom: .4em;
+	margin-top: .4em;
+}
+/***** *******/
+.userform input,
+.userform select { 
+  margin-top: 10px;
+  display: block;
+  width: 140px; 
+  font-size: 16px;
+}
+.userform label {
+  margin-top: 10px;
+  width: 120px;
+  float: left;
+  text-align: right; 
+  padding: .3em; 
+}
+
+.userform input#submit,
+.userform input#reset { 
+  display:inline;
+}
+
+form.userform {
+  background: #ddd;
+  border: 1px solid #aaa;
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+  padding: 1em;
+}
+
+.userform h1 {
+  color: red;
+  background-color: white;
+  padding: .3em;
+}
+
+.userform input.user-exists {
+  background-color: red;
+}
+.userform input.invalid {
+  background-color: #E55;
+}
+
+/**** ****/
+.subpages {
+  border: 1px solid #CCC;
+  margin-top: 2em;
+  padding: .7em;
+  background-color: #DDD;
+
+}

@@ -1,0 +1,20 @@
+
+#left,
+#footer,
+#debug,
+#top-menu,
+#breadcrumb,
+#top
+{
+  display: none;
+}
+
+#right {
+  border: none;
+  margin: 0;
+}
+
+#site-container {
+  margin: 0;
+  width: 800px;
+}

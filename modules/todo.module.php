@@ -1,7 +1,8 @@
 <?php
 /*
  * ==========================================================================
- * Titel                  : index.php
+ * Titel                  : Pages Module
+ * Project				  : ZenWiki
  * Licence                : GPL
  * URL                    : http://zenwiki.thomas-weustenfeld.de
  * Author                 : Thomas Weustenfeld
@@ -26,30 +27,38 @@
  * ==========================================================================
  */
 
-define( 'ZENWIKI_VERSION', '0.03' );
+class todoModule implements zenModule
+{
+	public static function actionList()
+	{
+		return array( "todos" );
+	}
 
-ini_set('short_open_tag', 1);
-ini_set('display_errors', 'On');
-date_default_timezone_set('Europe/Berlin');
+	public static function init()
+	{
+		MarkupManager::registerStage( MarkupManager::POST_STAGE, __CLASS__, 'stageInsertToDos' );
+	}
 
-#var_dump( $_ENV );
+    public static function stageInsertToDos( $text )
+	{
+		$text =  preg_replace(
+			'/{{TODO:(.*)}}/',
+			'TODO($1)',
+			$text );
 
-// TODO requirements
-// install (wenn keine settings ini)
+        return $text;
+	}
 
-include_once "autoloader.php";
-
-if( !Configuration::load( $_SERVER["SERVER_NAME"] . ".ini" ) ) {
-	Configuration::load( "settings.ini" );
+	public static function todosAction( $path = false )
+	{
+	    $result = array(
+			"page_tpl" => "TODO_TEMPLATE",
+			"params" => array_merge(
+				array()
+			)
+		);
+		return $result;
+	}
 }
 
-$basepath = Configuration::get( "wiki", "basepath", "wiki" );
-
-FileDB::setBasepath( $basepath );
-UserManager::setBasepath(  $basepath . "/users" );
-MarkupManager::setImagePath(  $basepath . "/images" );
-
-PluginManager::loadModules();
-
-UserManager::init();
-Dispatcher::run();
+return "todoModule";

@@ -36,14 +36,12 @@ class Configuration
 	public static function load( $filename )
 	{
 		dx( $filename, "Loading config file..." );
-		print_r($filename);
 
 		if( !file_exists( $filename ) ) return false;
 
 		self::$_inisettings = parse_ini_file( $filename, true );
 
 		#dx( ( print_r( self::$_inisettings, true ) ) );
-		print_r( self::$_inisettings, true );
 		return true;
 	}
 

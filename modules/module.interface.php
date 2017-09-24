@@ -1,7 +1,8 @@
 <?php
 /*
  * ==========================================================================
- * Titel                  : index.php
+ * Titel                  : Zen Module Interface
+ * Project				  : ZenWiki
  * Licence                : GPL
  * URL                    : http://zenwiki.thomas-weustenfeld.de
  * Author                 : Thomas Weustenfeld
@@ -26,30 +27,31 @@
  * ==========================================================================
  */
 
-define( 'ZENWIKI_VERSION', '0.03' );
+interface zenModule
+{
+	public static function actionList();
 
-ini_set('short_open_tag', 1);
-ini_set('display_errors', 'On');
-date_default_timezone_set('Europe/Berlin');
+	/*public static function action( $action, array $params = array() )
+	{
+		if( !is_string( $action ) ) throw new Exception( "String expected, got " . gettype( $action ) );
 
-#var_dump( $_ENV );
+		$action = $action . "Action";
 
-// TODO requirements
-// install (wenn keine settings ini)
+//		call_user_func( "self::".$action."Action" , $params );
+echo get_class( self );
+echo __CLASS__;
 
-include_once "autoloader.php";
+//		call_user_func( "zen::". $action, 'quiptim', 'qwertyuiop');
 
-if( !Configuration::load( $_SERVER["SERVER_NAME"] . ".ini" ) ) {
-	Configuration::load( "settings.ini" );
+		switch( $action )
+		{
+			case "recent":   return self::_recentAction( $params );  break;
+			case "create":   return self::_createAction( $params );  break;
+			case "index":    return self::_indexAction( $params );   break;
+
+			default: {
+				throw new Exception( "Unknown Action $action" );
+			} break;
+		}
+	}*/
 }
-
-$basepath = Configuration::get( "wiki", "basepath", "wiki" );
-
-FileDB::setBasepath( $basepath );
-UserManager::setBasepath(  $basepath . "/users" );
-MarkupManager::setImagePath(  $basepath . "/images" );
-
-PluginManager::loadModules();
-
-UserManager::init();
-Dispatcher::run();

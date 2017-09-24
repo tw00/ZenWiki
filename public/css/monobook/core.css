@@ -1,0 +1,64 @@
+/************* CSS **************/
+
+html, body {
+  background-color:#FFFFFF;
+  color:#666666;
+  font-family:"new helvetica",arial,helvetica,sans-serif;
+/*  font-size:11px; */
+  font-size: .9em;
+  margin:0;
+  padding:0;
+  background: url( "/public/images/headbg.jpg" ) no-repeat; 
+}
+
+a {
+  color:#002BB8;
+  text-decoration: none;
+}
+
+a:link {
+  color:#002BB8;
+  text-decoration:none;
+}
+
+a:visited {
+  color:#002BB8;
+  text-decoration:none;
+}
+
+a:active {
+  color:#FF6600;
+  text-decoration:underline;
+}
+
+a:hover {
+  color:#FF6600;
+  text-decoration:underline;
+}
+
+.post-lead h4 a[href$=".pdf"]:after, .post-lead p a[href$=".pdf"]:after {
+  content: url(http://www.subtraction.com/assets/pdf_icon.gif);
+  padding: 0 4px;
+}
+
+img {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "new helvetica",arial,helvetica,sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #111111;
+  font-weight: bold;
+}
+
+.clear { clear: both; }
+
+.tab.inactive { display: none; }
+
+.left { float: left; }
+.right { float: right; }

@@ -1,0 +1,123 @@
+.texy,
+.texy input,
+.texy select,
+.texy textarea, 
+.texy th,
+.texy td {
+	/* font-family: "Trebuchet MS", "Geneva CE", lucida, sans-serif; */ /* Trebuchet MS (elegantní bezpatkové písmo) */
+ 	/* font-family: sans-serif; */
+	font-size: 13px;
+}
+
+.texy input,
+.texy select,
+.texy textarea {
+	font-size: 100%;
+}
+
+.texy,
+.texy th,
+.texy td {
+	line-height: 1.4;
+}
+
+/*
+.texy th,
+.texy td {
+	font/-size: 100%;
+}*/
+
+
+/*
+.texy {
+	background: #F1F1F1;
+	color: #111111;
+	padding: 10px;
+	margin-top: 10px;
+}
+*/
+
+.texy pre {
+  background-color:#F9F9F9;
+  border:1px dashed #2F6FAB;
+  color:black;
+  line-height:1.1em;
+  padding:1em;
+  white-space: pre-wrap; /* CSS2.1 compliant */
+  white-space: -moz-pre-wrap; /* Mozilla-based browsers */
+  white-space: o-pre-wrap; /* Opera 7+ */
+}
+
+.texy h1 {
+/*  font-size: 18px; */
+/*  line-height: 30px; */
+}
+
+.texy h2 {
+  color: #000000;
+ /* font-size: 12px; */
+/*  line-height: 16px;*/
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.texy h3 {
+  border: 0 none;
+/*  font-size: 12px;*/
+/*  line-height: 16px; */
+  padding-bottom: 10px;
+}
+
+.texy h4 {
+/*  font-size: 11px; */
+/*  line-height: 13px; */
+  padding-bottom: 3px;
+}
+
+/*
+.texy h1 { font-size: 150%;  }
+.texy h2 { font-size: 130%; }
+.texy h3 { font-size: 115%;  }
+*/
+
+.texy hr {
+/*	color: #3B7CD0;
+	background-color: #3B7CD0;*/
+    color: #999;
+    background-color: #999;
+    width: 90%;
+	border: 0;
+	height: 1px;
+}
+
+.texy i,
+.texy em { margin-right: 0.1em; }
+
+
+.texy ul {
+	margin: 0 0 10px 10px;
+	padding: 0;
+}
+
+.texy ul li {
+	margin-left: 10px;
+}
+
+
+.texy table {
+	background-color: #ffffff;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.texy th {
+	border: 1px solid #8cacbb;
+	background-color: #dee7ec;
+	padding: 3px;
+}
+
+.texy td {
+	border: 1px solid #8cacbb;
+	padding: 3px;
+}
+

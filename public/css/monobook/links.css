@@ -1,0 +1,120 @@
+/*
+** keep the whitespace in front of the ^=, hides rule from konqueror
+** this is css3, the validator doesn't like it when validating as css2
+*/
+
+/*** 
+ * @TODO
+ * - Relative paths
+ * - Wikipedia 
+ * - Youtube
+ * -
+ * -
+ ***/
+
+a.page-existent {
+    font-weight: bold;
+}
+a.page-non-existent {
+    color: red;
+}
+
+a[href ^="http://"],
+a.external {
+    background: url(/public/images/icons/external.png) center right no-repeat;
+    padding-right: 13px;
+}
+
+a[href ^="https://"],
+a.link-https {
+    background: url(/public/images/icons/lock_icon.gif) center right no-repeat;
+    padding-right: 16px;
+}
+
+a[href ^="mailto:"],
+a.link-mailto {
+    background: url(/public/images/icons/mail_icon.gif) center right no-repeat;
+    padding-right: 18px;
+}
+
+a[href ^="news://"],
+a.link-news {
+    background: url(/public/images/icons/news_icon.png) center right no-repeat;
+    padding-right: 18px;
+}
+
+a[href ^="ftp://"],
+a.link-ftp {
+    background: url(/public/images/icons/file_icon.gif) center right no-repeat;
+    padding-right: 18px;
+}
+
+a[href ^="irc://"],
+a.link-irc {
+    background: url(/public/images/icons/discussionitem_icon.gif) center right no-repeat;
+    padding-right: 18px;
+}
+
+a[href ^="jabber://"],
+a.link-jabber {
+    background: url(/public/images/icons/discussionitem_icon.gif) center right no-repeat;
+    padding-right: 18px;
+}
+
+a[href *="wikipedia.org/"],
+a.link-wikipedia {
+    background: url("http://en.wikipedia.org/favicon.ico") center right no-repeat;
+    padding-right: 18px;
+}
+
+a[href *="youtube.com/"],
+a.link-wikipedia {
+    background: url("http://www.youtube.com/favicon.ico") center right no-repeat;
+    padding-right: 19px;
+}
+
+a[href *="tools.ietf.org/html/rfc"],
+a.link-rfc {
+    background: url("http://tools.ietf.org/images/rfc.png") center right no-repeat;
+    padding-right: 19px;
+}
+
+a[href $=".ogg"],  a[href $=".OGG"],
+a[href $=".mid"],  a[href $=".MID"],
+a[href $=".midi"], a[href $=".MIDI"],
+a[href $=".mp3"],  a[href $=".MP3"],
+a[href $=".wav"],  a[href $=".WAV"],
+a[href $=".wma"],  a[href $=".WMA"],
+a.link-audio {
+    background: url("/public/images/icons/audio.png") center right no-repeat !important;
+    padding-right: 13px;
+}
+a[href $=".ogm"],  a[href $=".OGM"],
+a[href $=".avi"],  a[href $=".AVI"],
+a[href $=".mpeg"], a[href $=".MPEG"],
+a[href $=".mpg"],  a[href $=".MPG"],
+a.link-video {
+    background: url("/public/images/icons/video.png") center right no-repeat;
+    padding-right: 13px;
+}
+a[href $=".jpg"],  a[href $=".JPG"],
+a[href $=".jpeg"], a[href $=".JPEG"],
+a[href $=".png"],  a[href $=".PNG"],
+a[href $=".gif"],  a[href $=".GIF"],
+a.link-image {
+    background: url("/public/images/icons/icon_img.gif" ) center right no-repeat;
+    padding-right: 17px;
+}
+a[href $=".pdf"],  a[href $=".PDF"],
+a[href *=".pdf#"], a[href *=".PDF#"],
+a[href *=".pdf?"], a[href *=".PDF?"],
+a.link-document {
+    background: url("/public/images/icons/document.png") center right no-repeat;
+    padding-right: 12px;
+}
+
+
+/*** HACK ***/
+a sub:before { content:"_"; }
+a sub { font-size: 12px; position:relative; top: -7px; }
+/*** HACK ***/

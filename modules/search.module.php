@@ -1,7 +1,8 @@
 <?php
 /*
  * ==========================================================================
- * Titel                  : index.php
+ * Titel                  : Search Module
+ * Project				  : ZenWiki
  * Licence                : GPL
  * URL                    : http://zenwiki.thomas-weustenfeld.de
  * Author                 : Thomas Weustenfeld
@@ -26,30 +27,49 @@
  * ==========================================================================
  */
 
-define( 'ZENWIKI_VERSION', '0.03' );
+class searchModule implements zenModule
+{
+	public static function actionList()
+	{
+		return array( "search" );
+	}
 
-ini_set('short_open_tag', 1);
-ini_set('display_errors', 'On');
-date_default_timezone_set('Europe/Berlin');
+	public static function searchAction()
+	{
+		$query = $_REQUEST['search']['q']; // TODO GET
 
-#var_dump( $_ENV );
+		// HACK
+		$result = array();
+		$resultList = array();
 
-// TODO requirements
-// install (wenn keine settings ini)
+		if( strlen( $query) > 2 ) {
+			exec( "find -L wiki_wavefab/pages|grep text|grep -v \.svn|xargs grep -i '$query'", $result ); // HACK HACK HACK
+		}
 
-include_once "autoloader.php";
+		foreach( $result as $line ) {
+			$data = explode( ':', $line );
 
-if( !Configuration::load( $_SERVER["SERVER_NAME"] . ".ini" ) ) {
-	Configuration::load( "settings.ini" );
+			if( count( $data ) < 2 ) continue;
+
+			$file = trim( $data[0] );
+			unset( $data[0] );
+			$text = implode( ':', $data );
+
+			$resultList[ $file ][] = $text;
+			/*array(
+				'file' => $file,
+				'text' => $text
+			);*/
+		}
+
+		return array(
+			"tpl" 	 => "search/result.tpl",
+			"params" => array(
+				"query"  => $query,
+				"result" => $resultList
+			)
+		);
+	}
 }
 
-$basepath = Configuration::get( "wiki", "basepath", "wiki" );
-
-FileDB::setBasepath( $basepath );
-UserManager::setBasepath(  $basepath . "/users" );
-MarkupManager::setImagePath(  $basepath . "/images" );
-
-PluginManager::loadModules();
-
-UserManager::init();
-Dispatcher::run();
+return "searchModule";

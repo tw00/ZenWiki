@@ -52,8 +52,6 @@ class TemplateManager
 
 		public static function add( $name, $var )
 		{		
-			print_r($name);
-			print_r($var);
 			// TODO: array als parameter		
 			self::$_varlist[ $name ] = $var;
 		}

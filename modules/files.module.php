@@ -1,7 +1,8 @@
 <?php
 /*
  * ==========================================================================
- * Titel                  : index.php
+ * Titel                  : Pages Module
+ * Project				  : ZenWiki
  * Licence                : GPL
  * URL                    : http://zenwiki.thomas-weustenfeld.de
  * Author                 : Thomas Weustenfeld
@@ -26,30 +27,54 @@
  * ==========================================================================
  */
 
-define( 'ZENWIKI_VERSION', '0.03' );
+class filesModule implements zenModule
+{
+	const IMAGE_PATH = "wiki_wavefab/images/"; #HACK
 
-ini_set('short_open_tag', 1);
-ini_set('display_errors', 'On');
-date_default_timezone_set('Europe/Berlin');
+	public static function actionList()
+	{
+		return array( "upload", "images" );
+	}
 
-#var_dump( $_ENV );
+	public static function uploadAction()
+	{
+		//TODO
 
-// TODO requirements
-// install (wenn keine settings ini)
+		return array(
+			"tpl" 	 => "files/upload.tpl",
+			"params" => array( )
+		);
+	}
 
-include_once "autoloader.php";
+	public static function imagesAction()
+	{
+		//TODO
+		$image_list = array();
 
-if( !Configuration::load( $_SERVER["SERVER_NAME"] . ".ini" ) ) {
-	Configuration::load( "settings.ini" );
+		foreach( glob( self::IMAGE_PATH . "*" ) as $file )
+		{
+			$details = stat( $file );
+			$size = floor( $details['size'] / 1024 );
+			$mtime = filemtime( $file );
+
+			$image_list[ $mtime ] = array( // HACK
+				"name"   => basename( $file ),
+				"file"   => $file,
+				"editor" => "mm", // HACK
+				"date"   => $mtime,
+				"size"   => $size
+			);
+		}
+
+		krsort( $image_list );
+
+		return array(
+			"tpl" 	 => "files/images.tpl",
+			"params" => array(
+				"img_list" => $image_list
+			)
+		);
+	}
 }
 
-$basepath = Configuration::get( "wiki", "basepath", "wiki" );
-
-FileDB::setBasepath( $basepath );
-UserManager::setBasepath(  $basepath . "/users" );
-MarkupManager::setImagePath(  $basepath . "/images" );
-
-PluginManager::loadModules();
-
-UserManager::init();
-Dispatcher::run();
+return "filesModule";
