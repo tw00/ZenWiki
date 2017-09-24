@@ -1,0 +1,62 @@
+Links
+=====
+
+* "Texy link":/test
+
+* [[test000]]
+* [[SiteThatDoesNotExists]]
+* [[WikiLink]]
+* [[WikiLink|Text]]
+* [[Link_2/test]]
+----
+* [test000]
+* [SiteThatDoesNotExists]
+* [WikiLink]
+* [WikiLink|Text]
+* [Link_2/test]
+
+Special Links
+=============
+
+* [[wiki:Wikipedia]]
+* [[special:index]]
+* [[youtube:123313V123]]
+* [[rfc:111]]
+-----
+* [[wiki:Wikipedia]]
+* [[special:index|Zum index]]
+* [[youtube:123313V123|ein youtube video]]
+* [[rfc:111|RFC111]]
+
+
+Link types
+==========
+* http://foobar/
+* https://foobar/
+* ftp://foobar/
+* irc://foobar/
+* jabber://foobar/
+* http://foobar/test.jpg
+* http://foobar/test.pdf
+* http://foobar/test.mpg
+* http://foobar/test.ogg
+* tw@adssd.de
+
+* "ein jpeg":/test/test.jpg
+* "ein mpeg":/test/test.mpg
+
+References
+==========
+
+* This is [homepage]
+* Look at "this site":[la trine]
+
+[homepage]: http://texy.info/ Texy2 .(override)
+
+External Link
+* http://google.de/
+* wavefab.com
+
+Images
+======
+[* wiki.jpg *]:/test

@@ -1,0 +1,33 @@
+[[Kategorie:Hauptseite]]
+"Kategorie:Hauptseite":/Kategorie:Hauptseite
+
+[* wiki.jpg *]
+[* /wiki/images/example.png >]
+
+* [[Link_2/test]]
+* "Link_2/test":Link_2/test
+
+[homepage]: http://texy.info/ Texy .(homepage)
+[la trine]: http://latrine.dgx.cz
+
+This is [homepage]
+
+Look at "this site":[la trine]
+
+Template
+-------
+{{foobar|hello|world}}
+
+MediaWiki wurde erfolgreich installiert.
+
+Hilfe zur Benutzung und Konfiguration der Wiki-Software findest du im [http://meta.wikimedia.org/wiki/Help:Contents Benutzerhandbuch].
+
+== Starthilfen ==
+
+* "Liste der Konfigurationsvariablen":http://www.mediawiki.org/wiki/Manual:Configuration_settings
+* "MediaWiki-FAQ":http://www.mediawiki.org/wiki/Manual:FAQ
+* "Mailingliste neuer MediaWiki-Versionen":https://lists.wikimedia.org/mailman/listinfo/mediawiki-announce
+
+== Benutzer ==
+* [[users/thomas]]
+* "Thomas":users/thomas

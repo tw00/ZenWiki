@@ -1,0 +1,28 @@
+== Automatisches Backup erstellen ==
+88.198.49.235:
+<pre>
+cd /root
+./mysql_backup.sh DATENBANKNAME
+</pre>
+
+78.46.82.195:
+<pre>
+cd /home/tw
+./backup DATENBANKNAME
+</pre>
+
+=== Neue Datenbank anlegen ===
+<pre>
+CREATE DATABASE database DEFAULT CHARACTER SET utf8;
+</pre>
+
+=== Neuen User anlegen ===
+<pre>
+GRANT ALL PRIVILEGES ON database.* TO 'username'@'localhost' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+</pre>
+
+==Tabellen zwischen 2 Datenbanken kopieren==
+<pre>
+mysqldump --opt -uadmin -p f2 products products_description products_to_categories|mysql -uadmin -p f2g
+</pre>
