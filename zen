@@ -1,0 +1,133 @@
+#!/bin/bash
+
+ZENWIKI_BASEPATH=/home/www/wiki.wavefab.com/web/wiki_wavefab
+ZENWIKI_USER=tw
+ZENWIKI_PAGES=$ZENWIKI_BASEPATH/pages
+
+# completion
+complete -W "edit create list recent" zen
+
+function print_help() {
+    echo -e "usage: $0 <subcommand> [options] [args]\n"
+    echo -e "ZenWiki command-line client, version 0.0.1."
+    echo -e "Type '$0 help <subcommand>' for help on a specific subcommand."
+    echo -e "Type '$0 --version' to see the program version number.\n"
+    echo -e "Most subcommands take a wiki page as arguments.\n"
+    print_subcommands
+    echo
+    echo -e "Zen is a tool for ZenWiki manipulation."
+    echo -e "For additional information, see http://zen.wavefab.com/"
+}
+
+function print_subcommands() {
+    echo -e "Available subcommands:"
+    echo -e " edit (e)"
+    echo -e " create (c)"
+    echo -e " list (l)"
+    echo -e " recent (r)"
+    echo -e " wiki (w)"
+    echo -e " help (h)"
+}
+
+if [ $# -lt 1 ]; then
+    print_help
+    exit
+fi
+
+pagesPathLength=${#ZENWIKI_PAGES}
+pagesPathLength=$(echo "scale=2;$pagesPathLength+2" |bc);
+
+case "$1" in
+edit|e)
+    if [ $# -ne 2 ]; then
+        echo "Missing Page"; exit
+    fi
+    pagePath="$ZENWIKI_PAGES/$2/text"
+    tempPath="$ZENWIKI_PAGES/$2/tmp.`whoami`"
+    # TODO file exists
+    cp $pagePath $tempPath
+    vim $tempPath
+    echo "Changes:"
+    diff $pagePath $tempPath
+    # TODO if leer
+    # TODO mv's
+    echo "done"
+    ;;
+create|c)
+    echo "TODO"; exit
+    ;;
+recent|r)
+    echo "+------------------------------------------+--------------+---------------------------+"
+    echo "| ARTICLE                                  | USER         | LAST MODIFICATION         |"
+    echo "+------------------------------------------+--------------+---------------------------+"
+	find -L $ZENWIKI_BASEPATH/pages|grep -v '.svn'|grep '.text'|head -n 100|while read path
+    do
+        name=$(echo "$path"|cut -c $pagesPathLength-)
+        name=`dirname $name`
+        mtime=`stat --printf=%y $path`
+        path=`dirname $path`
+        user=`cat $path/edits|head -n 1|cut -d":" -f2 -s`
+        if [ -z $user ]; then
+            user=unknown
+        fi
+        echo "foo" | awk '{ printf("| %-40s | %-12s | %-25s |\n",n,u,substr(m,0,19)); }' n="$name" u="$user" m="$mtime"
+    done
+    echo "+------------------------------------------+--------------+---------------------------+"
+    ;;
+list|l)
+    echo -e " ZenWiki Pages List"
+    echo -e " ------------------"
+
+    num=0
+	find -L $ZENWIKI_PAGES -type d|grep -v \.svn|sort|tail -n +2|cut -c $pagesPathLength-|while read page; 
+    do 
+        ((num++))
+        echo " $num) $page"
+    done
+    ;;
+wiki|w)
+    echo -e "\nCurrently selected ZenWiki:\n"
+    echo -e " [1] $ZENWIKI_PAGES\n"
+    ;;
+help|h)
+    if [ -z $2 ]; then
+        echo -e "usage: $1 $2 <subcommand>\n"
+        print_subcommands
+        exit
+    fi
+    echo -e "\nHelp for '$2'"
+    case "$2" in
+    edit|e)
+        echo " usage: $0 $2 <wikipage>" 
+        echo " Edit wiki page with consideration of version history"
+        ;;
+    create|c)
+        echo " usage: $0 $2 <wikipage>" 
+        echo " Creates a wiki page with consideration of version history"
+        ;;
+    recent|r)
+        echo " usage: $0 $2" 
+        echo " Show recent changes"
+        ;;
+    list|l)
+        echo " usage: $0 $2" 
+        echo " List all articles"
+        ;;
+    wiki|w)
+        echo " usage: $0 $2 <wiki>" 
+        echo " List and select current wiki installation"
+        ;;
+    help|h)
+        echo " Shows help ;-)"
+        ;;
+    *)
+        echo " No help for $2, unknown subcommand" 
+        ;;
+    esac
+    exit
+    ;;
+*) 
+    echo "Unknown subcommand $1"
+    exit
+    ;;
+esac

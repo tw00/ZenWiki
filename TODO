@@ -1,0 +1,90 @@
+BUGS
+====
+
+# !!!   Trailling slah bug Kundestam/ != Kundenstamm
+* !!!	Seiten mit Sonderzeichen anlegen (bzw. verhindern)
+* !!    Jumps für TOC
+* !     Image upload fixen
+* -		Redirect nach speichern!
+* -		plaintext link
+* ?		Im Index neue zeilen/seiten anlegen
+* ?		In pages gucken
+* ?	    [[]] fehlerhaft (?)
+
+Features
+========
+
+TOP
+---
+* AES / SHA JS verschlüßelung
+* Wenn leere Ordner aufgerufen, zeige Subarticles an
+* Benutzer zu Edits zuweisen
+* Reimplement Compare
+* Page renaming / moving
+* Page delete (+history?)
+* enable TABS in editor
+* Preview zurückkehren / direkt speichern
+* Syntax an texy beispiele anpassen (z.B. links!)
+* Erste Revision bringt nix
+
+MEDIUM
+------
+* Quick Jump (LiveSuche)
+* Image resize für source code (?)
+* Basehash beim laden der seite, wenn speichern basehash zurück wurde in der zwischenzeit editiert => neue version
+* bei suche auf seite anlegen weiterleiten
+* Revision wiederherstellen
+* eMail in ini
+* Editieren (?)
+* Suche
+(?) * Keine neue version bei speichern ohne änderung
+
+LOW
+---
+* css datei zum editieren anbieten
+* Syntaxhighlight
+* Autosave
+* ToDo Module
+* Backlinks
+* Twitter Module
+* Localization
+* Speichermöglichkeiten ohne neue Revision (nur kleine Änderung)
+
+MONOBOOK
+--------
+* Preview (Breadcrumb)
+
+Ideen
+=====
+
+* Evtl. nur diffs speichern?
+* Live Markdown einbauen: http://attacklab.net/showdown/
+* Verschüßelung einbauen:
+    - http://digitarald.de/playground/mnemonic-password-generator/
+    - http://javascript.internet.com/passwords/password-generator.html
+
+
+Done
+====
+
+* --Unterstriche in subpages gehen nicht--
+* --Externe links markieren--
+* --Es wird keine neue Zeile eingefügt in edits--
+* --Suchen & ersetzen [[]]--
+* --Bei date gestern und heute reinschreiben--
+* --image upload--
+* --Print--
+* --Preview zurückkehren / direkt speichern--
+* --Anlegen von neuen Unterseiten testen--
+* --Speichern auf Unterseiten--
+* --Anlegen von neuen Seiten--
+* --PREVIEW--
+* --Filelocking--
+* --Account Management--
+* --\ ist nicht speicherbar!! (php setting)--
+* --Möglickeit diese Datei in die Wiki zu integrieren--
+* --`#`REDIRECT für seiten--
+* --/special:??? nicht Passwort geschützt? bzw. durch Login? (e.g. recent)--
+* --Links ohne Artikel umfärben--
+* --http://zen.wlan-on-wheels.de/users (Exception)--
+* --/special:aaa --> FIXEN--
